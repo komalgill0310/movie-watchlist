@@ -76,3 +76,9 @@ _Third Task: Attach an event listener either when user typed the name and hit en
 1. Attach an event listener to the input => Key Press event
 2. Inside check if the event is _Enter_
    - Handle click event will happen.
+
+*Fourth Taks: Api Calls*✅
+**Breakdown:**
+
+1. Make an api call
+2. Log the data on the console
