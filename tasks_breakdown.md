@@ -27,16 +27,15 @@ _HTML_
 
 2.  A Search Bar - user has the ability to type the text
 
-- An input tag - type text
-  - a search icon
-  - placeholder text - Any movie name
+    - An input tag - type text
+      - a search icon
+      - placeholder text - Any movie name
 
-3. A Search Button - when click, will make **GET Request**
+3.  A Search Button - when click, will make **GET Request**
 
-- A button element
-  - text -> Search
+    - A button element
+      - text -> Search
 
-4. main Section for the index.html -
-
-- A blurred image
-- Text Below image -> Start exploring
+4.  main Section for the index.html
+    - A blurred image
+    - Text Below image -> Start exploring
