@@ -3,14 +3,6 @@
 const inputSearch = document.getElementById("movie-title-search");
 const btnFetchMovie = document.getElementById("btn-fetch-movie");
 
-// inputSearch.addEventListener("keypress", (e) => {
-//   e.preventDefault();
-//   if (e.key === "Enter") {
-//     fetchData();
-//     inputSearch.value = "";
-//   }
-// });
-
 btnFetchMovie.addEventListener("click", (e) => {
   e.preventDefault();
   fetchData();
