@@ -39,3 +39,40 @@ _HTML_
 4.  main Section for the index.html✅
     - A blurred image✅
     - Text Below image -> Start exploring✅
+
+**JAVASCRIPT BREAKDOWN: High level overview for the functionality**
+
+_Index.html Page Functionality_
+
+1. User will enter the movie title name in the Search bar
+2. Moives which includes that title name will be fetched from the Server.
+3. Each movie will have a "+" icon
+   - when user click on the icon, the movie will be added to the local storage.
+4. The movie information from the API which should be shown the page
+   - poster image for the movie
+   - Title for the movie
+   - Rating for the movie
+   - Duration for the movie -> In Minute
+   - Genre
+   - Small description of the movie
+
+**Step by Step Breakdown:**
+
+*First Task: When user the enter the movie name in the search input, store that value in a variable.*✅
+**Breakdown:**
+
+1. Store input search element in JS using it's end in a variable.
+
+*Second Task: Attach an event listener to the Search button, when user click on it, log the input search value on the console.*✅
+**Breakdown:**
+
+1. Store search button element in a variable in JS.
+2. Attach an _CLICK_ event listener to the search button
+   - When click on the button, log input search value on the console.
+
+_Third Task: Attach an event listener either when user typed the name and hit enter or click on the Search button, the click event listener will be called._
+**Breakdown:**✅
+
+1. Attach an event listener to the input => Key Press event
+2. Inside check if the event is _Enter_
+   - Handle click event will happen.

@@ -18,21 +18,24 @@
       >
     </header>
     <section class="search-bar-section">
-      <img src="/images/searchIcon.png" alt="Search Icon" srcset="" />
-      <input
-        type="search"
-        name="movie-title-search"
-        placeholder="Matrix"
-        id="movie-title-search"
-        class="input-search"
-      />
-      <button id="fetch-movie-btn" class="btn-search">Search</button>
+      <form>
+        <img src="/images/searchIcon.png" alt="Search Icon" />
+        <input
+          type="search"
+          name="movie-title-search"
+          placeholder="Matrix"
+          id="movie-title-search"
+          class="input-search"
+          required
+        />
+        <button id="btn-fetch-movie" class="btn-search">Search</button>
+      </form>
     </section>
     <main class="main-section">
       <!-- Movies will render here -->
       <img src="/images/movieIcon.png" alt="Movie Icon" />
       <p class="exloring-text">Start Exploring</p>
     </main>
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="/js/index.js"></script>
   </body>
 </html>
