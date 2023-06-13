@@ -17,18 +17,18 @@ _HTML_
 
 **Default page for the index.html _BreakDown_**
 
-1.  Header
+1.  Header✅
 
     - Text - Find your film✅
     - Text - My Watchlist✅
       1. it is an anchor tag, which when clicked will take user to the watchlist.html page.
       - this page will be opened on the same tab.
-    - a background image
+    - a background image✅
 
-2.  A Search Bar - user has the ability to type the text
+2.  A Search Bar - user has the ability to type the text✅
 
     - An input tag - type *SEARCH*✅
-      - a search icon
+      - a search icon✅
       - placeholder text - Any movie name✅
 
 3.  A Search Button - when click, will make **GET Request**✅
@@ -36,6 +36,6 @@ _HTML_
     - A button element✅
       - text -> Search
 
-4.  main Section for the index.html
-    - A blurred image
+4.  main Section for the index.html✅
+    - A blurred image✅
     - Text Below image -> Start exploring✅
