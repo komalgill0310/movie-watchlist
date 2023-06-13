@@ -4,6 +4,8 @@
 
 .header-section {
   border: 1px solid red;
+  height: 200px;
+  background-image: url("/images/headerBackground.png");
 }
 
 .search-bar-section {
@@ -11,6 +13,16 @@
   margin: 31px 0;
 }
 
+.search-bar-section img {
+  width: 17px;
+}
+
 .main-section {
   border: 2px solid green;
+}
+
+/* images */
+img {
+  width: 100px;
+  object-fit: cover;
 }
