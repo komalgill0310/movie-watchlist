@@ -19,8 +19,8 @@ _HTML_
 
 1.  Header
 
-    - Text - Find your film
-    - Text - My Watchlist
+    - Text - Find your film✅
+    - Text - My Watchlist✅
       1. it is an anchor tag, which when clicked will take user to the watchlist.html page.
       - this page will be opened on the same tab.
     - a background image
