@@ -31,11 +31,11 @@ _HTML_
       - a search icon
       - placeholder text - Any movie name✅
 
-3.  A Search Button - when click, will make **GET Request**
+3.  A Search Button - when click, will make **GET Request**✅
 
     - A button element✅
       - text -> Search
 
 4.  main Section for the index.html
     - A blurred image
-    - Text Below image -> Start exploring
+    - Text Below image -> Start exploring✅
