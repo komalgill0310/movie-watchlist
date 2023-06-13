@@ -10,8 +10,24 @@
   <body>
     <header class="header-section">
       <h2 class="title">Find your film</h2>
-      <a href="/html/watchlist.html">My Watchlist</a>
+      <a
+        href="/html/watchlist.html"
+        id="watchlist-link"
+        class="anchor-watchlist"
+        >My Watchlist</a
+      >
     </header>
+    <section class="search-bar">
+      <!-- SEARCH ICON GOES HERE -->
+      <input
+        type="search"
+        name="movie-title-search"
+        placeholder="Matrix"
+        id="movie-title-search"
+        class="input-search"
+      />
+      <button id="fetch-movie-btn" class="btn-search">Search</button>
+    </section>
     <script type="module" src="js/index.js"></script>
   </body>
 </html>

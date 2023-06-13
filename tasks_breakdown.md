@@ -27,13 +27,13 @@ _HTML_
 
 2.  A Search Bar - user has the ability to type the text
 
-    - An input tag - type text
+    - An input tag - type *SEARCH*✅
       - a search icon
-      - placeholder text - Any movie name
+      - placeholder text - Any movie name✅
 
 3.  A Search Button - when click, will make **GET Request**
 
-    - A button element
+    - A button element✅
       - text -> Search
 
 4.  main Section for the index.html
