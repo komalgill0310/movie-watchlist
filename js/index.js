@@ -33,7 +33,10 @@ function plusIcon() {
 }
 
 function handlePlusClick(e) {
-  console.log(" I am plus icon!", e.target.parentNode.previousElementSibling);
+  console.log(" I am plus icon!");
+  const element = e.target.parentNode.previousElementSibling;
+  console.log(element);
+  localStorage.setItem("myItem", element.innerHTML);
 }
 
 async function getMovieDetails(id) {
