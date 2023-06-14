@@ -119,3 +119,10 @@ _Breakdown_
 1. Give the image a class & Id.
 2. Get access to that element in JS using its ID.
 3. Attach a click event listener to the image, which when clicked log a message on the console.
+
+*Second task: When clicked on the plus icon, log that element's parent's sibling html on the console.*✅
+
+**Breakdown**
+
+1. Reach out to the parent of the clicked element.
+2. Log the sibling on the DOM.

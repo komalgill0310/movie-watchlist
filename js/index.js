@@ -9,10 +9,6 @@ btnFetchMovie.addEventListener("click", (e) => {
   inputSearch.value = "";
 });
 
-function handlePlusClick(e) {
-  console.log(" I am plus icon!", e.target.id);
-}
-
 async function fetchMovies() {
   const url = baseURL();
   const response = await fetch(`${url}&s=${inputSearch.value}`);
@@ -36,6 +32,10 @@ function plusIcon() {
   }
 }
 
+function handlePlusClick(e) {
+  console.log(" I am plus icon!", e.target.parentNode.previousElementSibling);
+}
+
 async function getMovieDetails(id) {
   const url = baseURL();
   const movieResponse = await fetch(`${url}&i=${id}`);
@@ -56,16 +56,18 @@ function createMovieCard(movie) {
   } = movie;
   return `
     <div class="movie-container">
-      <img src=${poster} alt="Image poster" />
-      <h3>${title}</h3>
-      <p>${rating}</p>
-      <p>${duration}</p>
-      <p>${genre}</p>
+      <div class="movie-info">
+        <img src=${poster} alt="Image poster" />
+        <h3>${title}</h3>
+        <p>${rating}</p>
+        <p>${duration}</p>
+        <p>${genre}</p>
+        <p>${plot}</p>
+      </div>
       <div>
         <img src="/images/addIcon.png" class="plus-icon" id=${id} />
         <p>Watchlist</p>
       </div>
-      <p>${plot}</p>
     </div>
     <hr />
     `;
