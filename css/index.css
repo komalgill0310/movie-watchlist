@@ -26,3 +26,7 @@ img {
   width: 100px;
   object-fit: cover;
 }
+
+.movie-container {
+  background-color: aquamarine;
+}

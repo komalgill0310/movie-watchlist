@@ -77,8 +77,32 @@ _Third Task: Attach an event listener either when user typed the name and hit en
 2. Inside check if the event is _Enter_
    - Handle click event will happen.
 
-*Fourth Taks: Api Calls*✅
+*Fourth Task: Api Calls*✅
 **Breakdown:**
 
 1. Make an api call
 2. Log the data on the console
+
+*Fifth Task: Render the data on the page*✅
+**Breakdown:**
+
+1. Create a function called renderData
+
+   - Pass data as a parameter to the function.
+   - Use object destructure to store the required values in a variable.
+   - Create a variable called X
+   - use for loop to loop over the data
+     - Create html element to hold the required data.
+     - Store all the html data in a variable X
+   - update the innerHtml for the main section = X
+
+2. Call renderData in a fetchData function.
+
+**Fetch request using _s parameter_ does not return the full detail about the movie. So, In order to get the full detail, need to make another get request using the id for the movie from the first request.**✅
+_Breakdown_
+
+1. Make the first API request, using the input value
+2. Use for loop to loop over the data
+3. make another fetch request using the id for each of the movie object.
+4. Use Object destructure to store the values in variables.
+5. Log them on the console.
