@@ -30,3 +30,11 @@ img {
 .movie-container {
   background-color: aquamarine;
 }
+
+.plus-icon {
+  border: 2px solid red;
+  background-color: rgb(224, 130, 15);
+  cursor: pointer;
+  color: black;
+  width: 53px;
+}

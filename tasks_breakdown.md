@@ -106,3 +106,16 @@ _Breakdown_
 3. make another fetch request using the id for each of the movie object.
 4. Use Object destructure to store the values in variables.
 5. Log them on the console.
+
+<!-- ========================================================== -->
+<!-- ========================================================== -->
+
+**SECOND PART OF THE PROJECT**
+
+*First task: Add an event listener to the plus icon, which when clicked, log a message "I was clicked!" on the console.*✅
+
+**Breakdown**
+
+1. Give the image a class & Id.
+2. Get access to that element in JS using its ID.
+3. Attach a click event listener to the image, which when clicked log a message on the console.
