@@ -127,7 +127,7 @@ _Breakdown_
 1. Reach out to the parent of the clicked element.
 2. Log the sibling on the DOM.
 
-*Third Task: How to store the click element's parent's sibling in the Local Storage.*✅
+*Third Task: How to store the response of each movie info in a local storage. *✅
 
 **Breakdown:**
 

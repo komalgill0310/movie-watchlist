@@ -34,15 +34,20 @@ function plusIcon() {
 
 function handlePlusClick(e) {
   console.log(" I am plus icon!");
-  const element = e.target.parentNode.previousElementSibling;
-  console.log(element);
-  localStorage.setItem("myItem", element.innerHTML);
+  wishToWatchMovies = wishToWatchMovies.concat(
+    movies.filter((movie) => movie.imdbID === e.target.id)
+  );
+  localStorage.setItem("movie", JSON.stringify(wishToWatchMovies));
+  console.log(wishToWatchMovies);
 }
 
+let wishToWatchMovies = [];
+let movies = [];
 async function getMovieDetails(id) {
   const url = baseURL();
   const movieResponse = await fetch(`${url}&i=${id}`);
   const movieData = await movieResponse.json();
+  movies.push(movieData);
   const movieCard = createMovieCard(movieData);
   return movieCard;
 }
