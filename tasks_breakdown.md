@@ -132,3 +132,11 @@ _Breakdown_
 **Breakdown:**
 
 1. Use local storage setItem to store the item
+
+*Fourth Task: log the local storage items, which are present in Local storage already on the console.*✅
+
+**Breakdown:**
+
+1. Create a function called getLocalStorageItems
+2. use getItem function to get the local storage items.
+3. Log it on the console.
