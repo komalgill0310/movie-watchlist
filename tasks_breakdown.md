@@ -140,3 +140,5 @@ _Breakdown_
 1. Create a function called getLocalStorageItems
 2. use getItem function to get the local storage items.
 3. Log it on the console.
+
+*Fifth Task: Render the local storage items on the page, when app loads or refreshes.*✅

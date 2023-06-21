@@ -33,24 +33,15 @@ function plusIcon() {
 }
 
 function handlePlusClick(e) {
-  console.log(" I am plus icon!");
   wishToWatchMovies = wishToWatchMovies.concat(
     movies.filter((movie) => movie.imdbID === e.target.id)
   );
   localStorage.setItem("movies", JSON.stringify(wishToWatchMovies));
-  console.log(wishToWatchMovies);
 }
 
 let wishToWatchMovies = [];
 let movies = [];
 
-// GET ITEMS FROM LOCAL STORAGE
-
-getMoviesFromLocalStorage();
-function getMoviesFromLocalStorage() {
-  wishToWatchMovies = JSON.parse(localStorage.getItem("movies"));
-  console.log(wishToWatchMovies);
-}
 async function getMovieDetails(id) {
   const url = baseURL();
   const movieResponse = await fetch(`${url}&i=${id}`);
