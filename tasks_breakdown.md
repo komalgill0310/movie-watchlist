@@ -142,3 +142,11 @@ _Breakdown_
 3. Log it on the console.
 
 *Fifth Task: Render the local storage items on the page, when app loads or refreshes.*✅
+
+_Sixth Task: How to have the index.html page renders the data on the page until new movie search has been made._
+
+**Breakdown:**
+
+1. Store the entire API call in a local storage, once the response comes back.
+2. Whenever user goes back to watchlist page, and then comes render the movies on the page from the local storage.
+3. When new search has been made, before storing the response in a local storage, clear the local storage and then Do Step#1 and Step#2.

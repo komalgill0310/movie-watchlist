@@ -28,7 +28,8 @@ function createMovieCard(movie) {
 }
 
 function getMoviesFromLocalStorage() {
-  return JSON.parse(localStorage.getItem("movies"));
+  const storedMovies = JSON.parse(localStorage.getItem("movies"));
+  return storedMovies || [];
 }
 
 function renderData() {

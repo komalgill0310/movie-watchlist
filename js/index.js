@@ -21,10 +21,12 @@ async function displayMovieData(movieData) {
   for (const movie of movieData.Search) {
     movieHtml += await getMovieDetails(movie.imdbID);
   }
+
   document.querySelector(".main-section").innerHTML = movieHtml;
   plusIcon();
 }
 
+// GIVE US DATA TO DISPLAY IN WATCHLIST PAGE
 function plusIcon() {
   const imgPlusIcon = document.querySelectorAll(".plus-icon");
   for (const plusIcon of imgPlusIcon) {
@@ -33,14 +35,17 @@ function plusIcon() {
 }
 
 function handlePlusClick(e) {
-  wishToWatchMovies = wishToWatchMovies.concat(
-    movies.filter((movie) => movie.imdbID === e.target.id)
+  if (JSON.parse(localStorage.getItem("movies"))) {
+    WISHTOWATCHMOVIES.push(...JSON.parse(localStorage.getItem("movies")));
+  }
+  WISHTOWATCHMOVIES.push(
+    ...movies.filter((movie) => movie.imdbID === e.target.id)
   );
-  localStorage.setItem("movies", JSON.stringify(wishToWatchMovies));
+  localStorage.setItem("movies", JSON.stringify(WISHTOWATCHMOVIES));
 }
 
-let wishToWatchMovies = [];
 let movies = [];
+const WISHTOWATCHMOVIES = [];
 
 async function getMovieDetails(id) {
   const url = baseURL();
