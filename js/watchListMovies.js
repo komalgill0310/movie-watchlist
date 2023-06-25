@@ -1,35 +1,7 @@
-function createMovieCard(movie) {
-  const {
-    Poster: poster,
-    Title: title,
-    imdbRating: rating,
-    Runtime: duration,
-    Plot: plot,
-    Genre: genre,
-    imdbID: id,
-  } = movie;
-  return `
-    <div class="movie-container">
-      <div class="movie-info">
-        <img src=${poster} alt="Image poster" />
-        <h3>${title}</h3>
-        <p>${rating}</p>
-        <p>${duration}</p>
-        <p>${genre}</p>
-        <p>${plot}</p>
-      </div>
-      <div>
-        <img src="/images/addIcon.png" class="plus-icon" id=${id} />
-        <p>Watchlist</p>
-      </div>
-    </div>
-    <hr />
-    `;
-}
+import { createMovieCard } from "/js/utils.js";
 
 function getMoviesFromLocalStorage() {
-  const storedMovies = JSON.parse(localStorage.getItem("movies"));
-  return storedMovies || [];
+  return JSON.parse(localStorage.getItem("movies")) || [];
 }
 
 function renderData() {
@@ -37,9 +9,27 @@ function renderData() {
   if (data.length) {
     let movie = "";
     for (const wishToWatchMovie of data) {
-      movie += createMovieCard(wishToWatchMovie);
+      console.log(wishToWatchMovie.imdbID);
+      movie += `
+        <div class="movie-container">
+            ${createMovieCard(wishToWatchMovie)}
+            <div>
+              <img src="/images/removeIcon.png" class="remove-icon" id=${
+                wishToWatchMovie.imdbID
+              }>
+              <p>Remove</p>
+            </div>
+        </div>`;
     }
     document.querySelector(".watch-list-movies").innerHTML = movie;
+    removeIcon();
+  } else {
+    document.querySelector(".watch-list-movies").innerHTML = `
+      <a
+      href="/html/index.html"
+      class="anchor-watchlist"
+      >Let's add some movies to watch!
+      </a>`;
   }
 }
 
@@ -47,3 +37,17 @@ window.addEventListener("load", (e) => {
   e.preventDefault();
   renderData();
 });
+
+function removeIcon() {
+  const imgRemoveIcon = document.querySelectorAll(".remove-icon");
+  for (const removeIcon of imgRemoveIcon) {
+    removeIcon.addEventListener("click", handleRemoveClick);
+  }
+}
+
+function handleRemoveClick(e) {
+  let storedMovies = getMoviesFromLocalStorage();
+  storedMovies = storedMovies.filter((movie) => movie.imdbID !== e.target.id);
+  localStorage.setItem("movies", JSON.stringify(storedMovies));
+  renderData();
+}

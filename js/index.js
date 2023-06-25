@@ -1,4 +1,4 @@
-import { baseURL } from "/js/utils.js";
+import { baseURL, createMovieCard } from "/js/utils.js";
 
 const inputSearch = document.getElementById("movie-title-search");
 const btnFetchMovie = document.getElementById("btn-fetch-movie");
@@ -21,12 +21,10 @@ async function displayMovieData(movieData) {
   for (const movie of movieData.Search) {
     movieHtml += await getMovieDetails(movie.imdbID);
   }
-
   document.querySelector(".main-section").innerHTML = movieHtml;
   plusIcon();
 }
 
-// GIVE US DATA TO DISPLAY IN WATCHLIST PAGE
 function plusIcon() {
   const imgPlusIcon = document.querySelectorAll(".plus-icon");
   for (const plusIcon of imgPlusIcon) {
@@ -35,6 +33,7 @@ function plusIcon() {
 }
 
 function handlePlusClick(e) {
+  const WISHTOWATCHMOVIES = [];
   if (JSON.parse(localStorage.getItem("movies"))) {
     WISHTOWATCHMOVIES.push(...JSON.parse(localStorage.getItem("movies")));
   }
@@ -45,42 +44,19 @@ function handlePlusClick(e) {
 }
 
 let movies = [];
-const WISHTOWATCHMOVIES = [];
 
 async function getMovieDetails(id) {
   const url = baseURL();
   const movieResponse = await fetch(`${url}&i=${id}`);
   const movieData = await movieResponse.json();
   movies.push(movieData);
-  const movieCard = createMovieCard(movieData);
-  return movieCard;
-}
-
-function createMovieCard(movie) {
-  const {
-    Poster: poster,
-    Title: title,
-    imdbRating: rating,
-    Runtime: duration,
-    Plot: plot,
-    Genre: genre,
-    imdbID: id,
-  } = movie;
-  return `
+  const movieCard = `
     <div class="movie-container">
-      <div class="movie-info">
-        <img src=${poster} alt="Image poster" />
-        <h3>${title}</h3>
-        <p>${rating}</p>
-        <p>${duration}</p>
-        <p>${genre}</p>
-        <p>${plot}</p>
-      </div>
+      ${createMovieCard(movieData)}
       <div>
         <img src="/images/addIcon.png" class="plus-icon" id=${id} />
         <p>Watchlist</p>
       </div>
-    </div>
-    <hr />
-    `;
+    </div>`;
+  return movieCard;
 }
