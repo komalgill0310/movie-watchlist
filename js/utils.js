@@ -8,18 +8,18 @@ function createMovieCard(movie) {
     Title: title,
     imdbRating: rating,
     Runtime: duration,
-    Plot: plot,
     Genre: genre,
-    imdbID: id,
+    Plot: plot,
   } = movie;
+  console.log("movieCard: ", title);
   return `    
       <div class="movie-info">
-        <img src=${poster} alt="Image poster" />
-        <h3>${title}</h3>
-        <p>${rating}</p>
-        <p>${duration}</p>
-        <p>${genre}</p>
-        <p>${plot}</p>
+        <img src=${poster} alt="${title}" class="movie-img">
+        <h3 class="movie-title">${title}</h3>
+        <p class="movie-rating">${rating}</p>
+        <p class="movie-duration">${duration}</p>
+        <p class="movie-genre">${genre}</p>
+        <p class="movie-plot">${plot}</p>
       </div>   
     `;
 }

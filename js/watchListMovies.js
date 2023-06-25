@@ -1,7 +1,7 @@
 import { createMovieCard } from "/js/utils.js";
 
 function getMoviesFromLocalStorage() {
-  return JSON.parse(localStorage.getItem("movies")) || [];
+  return JSON.parse(localStorage.getItem("wishToWatchMovies")) || [];
 }
 
 function renderData() {
@@ -48,6 +48,6 @@ function removeIcon() {
 function handleRemoveClick(e) {
   let storedMovies = getMoviesFromLocalStorage();
   storedMovies = storedMovies.filter((movie) => movie.imdbID !== e.target.id);
-  localStorage.setItem("movies", JSON.stringify(storedMovies));
+  localStorage.setItem("wishToWatchMovies", JSON.stringify(storedMovies));
   renderData();
 }

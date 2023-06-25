@@ -3,6 +3,8 @@ import { baseURL, createMovieCard } from "/js/utils.js";
 const inputSearch = document.getElementById("movie-title-search");
 const btnFetchMovie = document.getElementById("btn-fetch-movie");
 
+let moviesInfo = [];
+
 btnFetchMovie.addEventListener("click", (e) => {
   e.preventDefault();
   fetchMovies();
@@ -22,41 +24,44 @@ async function displayMovieData(movieData) {
     movieHtml += await getMovieDetails(movie.imdbID);
   }
   document.querySelector(".main-section").innerHTML = movieHtml;
-  plusIcon();
+  attachPlusIconEventListeners();
 }
 
-function plusIcon() {
-  const imgPlusIcon = document.querySelectorAll(".plus-icon");
-  for (const plusIcon of imgPlusIcon) {
-    plusIcon.addEventListener("click", handlePlusClick);
-  }
-}
-
-function handlePlusClick(e) {
-  const WISHTOWATCHMOVIES = [];
-  if (JSON.parse(localStorage.getItem("movies"))) {
-    WISHTOWATCHMOVIES.push(...JSON.parse(localStorage.getItem("movies")));
-  }
-  WISHTOWATCHMOVIES.push(
-    ...movies.filter((movie) => movie.imdbID === e.target.id)
-  );
-  localStorage.setItem("movies", JSON.stringify(WISHTOWATCHMOVIES));
-}
-
-let movies = [];
-
-async function getMovieDetails(id) {
+async function getMovieDetails(movieId) {
   const url = baseURL();
-  const movieResponse = await fetch(`${url}&i=${id}`);
+  const movieResponse = await fetch(`${url}&i=${movieId}`);
   const movieData = await movieResponse.json();
-  movies.push(movieData);
+  moviesInfo.push(movieData);
   const movieCard = `
     <div class="movie-container">
       ${createMovieCard(movieData)}
       <div>
-        <img src="/images/addIcon.png" class="plus-icon" id=${id} />
+        <img src="/images/addIcon.png" 
+        alt="add-icon-to-add-movies" 
+        class="add-icon"
+        id=${movieId} 
+        >
         <p>Watchlist</p>
       </div>
     </div>`;
   return movieCard;
+}
+
+function attachPlusIconEventListeners() {
+  const imgAddIcons = document.querySelectorAll(".add-icon");
+  for (const addIcon of imgAddIcons) {
+    addIcon.addEventListener("click", addToLocalStorageOnClick);
+  }
+}
+
+function addToLocalStorageOnClick(e) {
+  const wishToWatchMovies = [];
+  const storedMoviesData = JSON.parse(
+    localStorage.getItem("wishToWatchMovies")
+  );
+  storedMoviesData && wishToWatchMovies.push(...storedMoviesData);
+  wishToWatchMovies.push(
+    ...moviesInfo.filter((movie) => movie.imdbID === e.target.id)
+  );
+  localStorage.setItem("wishToWatchMovies", JSON.stringify(wishToWatchMovies));
 }
