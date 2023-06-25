@@ -1,51 +1,52 @@
 import { createMovieCard } from "/js/utils.js";
 
-function getMoviesFromLocalStorage() {
-  return JSON.parse(localStorage.getItem("wishToWatchMovies")) || [];
-}
-
-function renderData() {
-  const data = getMoviesFromLocalStorage();
-  if (data.length) {
-    let movie = "";
-    for (const wishToWatchMovie of data) {
-      console.log(wishToWatchMovie.imdbID);
-      movie += `
-        <div class="movie-container">
-            ${createMovieCard(wishToWatchMovie)}
-            <div>
-              <img src="/images/removeIcon.png" class="remove-icon" id=${
-                wishToWatchMovie.imdbID
-              }>
-              <p>Remove</p>
-            </div>
-        </div>`;
-    }
-    document.querySelector(".watch-list-movies").innerHTML = movie;
-    removeIcon();
-  } else {
-    document.querySelector(".watch-list-movies").innerHTML = `
-      <a
-      href="/html/index.html"
-      class="anchor-watchlist"
-      >Let's add some movies to watch!
-      </a>`;
-  }
-}
-
 window.addEventListener("load", (e) => {
   e.preventDefault();
   renderData();
 });
 
-function removeIcon() {
-  const imgRemoveIcon = document.querySelectorAll(".remove-icon");
-  for (const removeIcon of imgRemoveIcon) {
-    removeIcon.addEventListener("click", handleRemoveClick);
+function renderData() {
+  const moviesData = getMoviesFromLocalStorage();
+  if (moviesData.length) {
+    const movies = moviesData
+      .map((movie) => {
+        return `
+            <div class="movie-container">
+                ${createMovieCard(movie)}
+                <div>
+                  <img src="/images/removeIcon.png" class="remove-icon" id=${
+                    movie.imdbID
+                  }>
+                  <p>Remove</p>
+                </div>
+            </div>`;
+      })
+      .join("");
+    document.querySelector(".watch-list-movies").innerHTML = movies;
+    attachRemoveIconEventListeners();
+  } else {
+    document.querySelector(".watch-list-movies").innerHTML = `
+      <a href="/html/index.html" class="anchor-watchlist"
+          >Let's add some movies to watch!
+      </a>`;
   }
 }
 
-function handleRemoveClick(e) {
+function getMoviesFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("wishToWatchMovies")) || [];
+}
+
+function attachRemoveIconEventListeners() {
+  const imgRemoveIcons = document.querySelectorAll(".remove-icon");
+  imgRemoveIcons.forEach((imgRemoveIcon) =>
+    imgRemoveIcon.addEventListener(
+      "click",
+      removeMovieFromLocalStorageArrayAndRender
+    )
+  );
+}
+
+function removeMovieFromLocalStorageArrayAndRender(e) {
   let storedMovies = getMoviesFromLocalStorage();
   storedMovies = storedMovies.filter((movie) => movie.imdbID !== e.target.id);
   localStorage.setItem("wishToWatchMovies", JSON.stringify(storedMovies));

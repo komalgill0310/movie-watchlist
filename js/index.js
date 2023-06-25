@@ -24,7 +24,7 @@ async function displayMovieData(movieData) {
     movieHtml += await getMovieDetails(movie.imdbID);
   }
   document.querySelector(".main-section").innerHTML = movieHtml;
-  attachPlusIconEventListeners();
+  attachAddIconEventListeners();
 }
 
 async function getMovieDetails(movieId) {
@@ -47,11 +47,11 @@ async function getMovieDetails(movieId) {
   return movieCard;
 }
 
-function attachPlusIconEventListeners() {
+function attachAddIconEventListeners() {
   const imgAddIcons = document.querySelectorAll(".add-icon");
-  for (const addIcon of imgAddIcons) {
-    addIcon.addEventListener("click", addToLocalStorageOnClick);
-  }
+  imgAddIcons.forEach((imgAddIcon) =>
+    imgAddIcon.addEventListener("click", addToLocalStorageOnClick)
+  );
 }
 
 function addToLocalStorageOnClick(e) {

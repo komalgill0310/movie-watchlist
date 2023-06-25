@@ -11,7 +11,6 @@ function createMovieCard(movie) {
     Genre: genre,
     Plot: plot,
   } = movie;
-  console.log("movieCard: ", title);
   return `    
       <div class="movie-info">
         <img src=${poster} alt="${title}" class="movie-img">

@@ -31,7 +31,8 @@ img {
   background-color: aquamarine;
 }
 
-.add-icon {
+.add-icon,
+.remove-icon {
   border: 2px solid red;
   background-color: rgb(224, 130, 15);
   cursor: pointer;
