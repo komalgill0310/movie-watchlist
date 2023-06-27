@@ -35,13 +35,13 @@ async function getMovieDetails(movieId) {
   const movieCard = `
     <div class="movie-container">
       ${createMovieCard(movieData)}
-      <div>
+      <div class="watchlist-container">
         <img src="/images/addIcon.png" 
         alt="add-icon-to-add-movies" 
-        class="add-icon"
+        class="action-icon"
         id=${movieId} 
         >
-        <p>Watchlist</p>
+        <p class="description-text">Watchlist</p>
       </div>
     </div>`;
   return movieCard;

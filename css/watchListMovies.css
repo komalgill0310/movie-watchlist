@@ -1,0 +1,23 @@
+/* DEFAULT STATE OF CONTAINER IN WHICH MOVIES WILL RENDER */
+
+body {
+  grid-template-rows: auto 1fr;
+}
+
+.empty-watchlist-text {
+  color: #787878;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.78125rem;
+  justify-self: center;
+  align-self: end;
+}
+
+.movies-search-link {
+  color: #fff;
+  font-size: 0.875rem;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 1.25rem;
+  text-decoration: none;
+}

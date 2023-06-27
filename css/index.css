@@ -1,0 +1,62 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.search-icon {
+  width: 24.5px;
+  height: 32px;
+  background: #343232;
+  text-align: center;
+  margin-right: 0;
+  object-fit: cover;
+}
+
+.input-search {
+  padding: 0.5625rem 0.8125rem;
+  align-items: center;
+  font-size: 1.15rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.25rem;
+  margin: 0;
+  width: 25em;
+  color: #908282;
+  background: #343232;
+  border: none;
+}
+
+.input-search:focus {
+  outline: none;
+}
+
+.btn-search {
+  width: 10em;
+  padding: 0.6125rem 0.8125rem;
+  border-radius: 0px 6px 6px 0px;
+  background: #4b4b4b;
+  margin: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* DEFAULT STATE OF CONTAINER IN WHICH MOVIES WILL RENDER*/
+
+.img-movie-icon {
+  width: 4.38em;
+  height: 3.83em;
+  margin-bottom: 0;
+  justify-self: center;
+  align-self: end;
+}
+
+.exploring-text {
+  color: #2e2e2f;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  justify-self: center;
+  margin-top: 13px;
+}

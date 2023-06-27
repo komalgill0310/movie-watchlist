@@ -13,11 +13,11 @@ function renderData() {
         return `
             <div class="movie-container">
                 ${createMovieCard(movie)}
-                <div>
-                  <img src="/images/removeIcon.png" class="remove-icon" id=${
+                <div class="watchlist-container">
+                  <img src="/images/removeIcon.png" class="action-icon" id=${
                     movie.imdbID
                   }>
-                  <p>Remove</p>
+                  <p class="description-text">Remove</p>
                 </div>
             </div>`;
       })
@@ -26,7 +26,8 @@ function renderData() {
     attachRemoveIconEventListeners();
   } else {
     document.querySelector(".watch-list-movies").innerHTML = `
-      <a href="/html/index.html" class="anchor-watchlist"
+      <p class="empty-watchlist-text">Your watchlist is looking a little empty...</p>
+      <a href="/html/index.html" class="movies-search-link"
           >Let's add some movies to watch!
       </a>`;
   }

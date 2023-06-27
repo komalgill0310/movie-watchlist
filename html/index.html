@@ -18,31 +18,36 @@
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
+
     <header class="header-section">
       <h2 class="header-title">Find your film</h2>
       <a href="/html/watchlist.html" id="watchlist-link" class="nav-link"
         >My Watchlist</a
       >
     </header>
-    <section class="search-bar-section">
-      <form>
-        <img src="/images/searchIcon.png" alt="Search Icon" />
-        <input
-          type="search"
-          name="movie-title-search"
-          placeholder="Matrix"
-          id="movie-title-search"
-          class="input-search"
-          required
-        />
-        <button id="btn-fetch-movie" class="btn-search">Search</button>
-      </form>
-    </section>
+
+    <form>
+      <img src="/images/searchIcon.png" alt="Search Icon" class="search-icon" />
+      <input
+        type="search"
+        name="movie-title-search"
+        placeholder="Search for a movie"
+        id="movie-title-search"
+        class="input-search"
+        autocomplete="off"
+        required
+      />
+      <input id="btn-fetch-movie" class="btn-search" type="submit">
+        Search
+      </input>
+    </form>
+
     <main class="main-section">
       <!-- Movies will render here -->
-      <img src="/images/movieIcon.png" alt="Movie Icon" />
-      <p class="exloring-text">Start Exploring</p>
+      <img src="/images/movieIcon.png" alt="Movie Icon" class="img-movie-icon"/>
+      <p class="exploring-text">Start Exploring</p>
     </main>
+
     <script type="module" src="/js/index.js"></script>
   </body>
 </html>
