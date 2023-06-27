@@ -14,7 +14,7 @@ function renderData() {
             <div class="movie-container">
                 ${createMovieCard(movie)}
                 <div class="watchlist-container">
-                  <img src="/images/removeIcon.png" class="action-icon" id=${
+                  <img src="/images/removeIcon.png" class="action-icon remove-icon" id=${
                     movie.imdbID
                   }>
                   <p class="description-text">Remove</p>

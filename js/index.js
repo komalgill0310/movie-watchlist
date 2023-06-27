@@ -7,15 +7,24 @@ let moviesInfo = [];
 
 btnFetchMovie.addEventListener("click", (e) => {
   e.preventDefault();
-  fetchMovies();
+  fetchAndRenderMovies();
   inputSearch.value = "";
 });
 
-async function fetchMovies() {
+async function fetchAndRenderMovies() {
   const url = baseURL();
   const response = await fetch(`${url}&s=${inputSearch.value}`);
   const data = await response.json();
+  if (!data.Search) {
+    return renderNoResultsMessage();
+  }
   displayMovieData(data);
+}
+
+function renderNoResultsMessage() {
+  document.querySelector(".main-section").innerHTML = `
+    <p class="no-result-text">Unable to find what you’re looking for. Please try another search.</p>  
+  `;
 }
 
 async function displayMovieData(movieData) {

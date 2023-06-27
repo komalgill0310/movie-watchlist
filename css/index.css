@@ -60,3 +60,15 @@ form {
   justify-self: center;
   margin-top: 13px;
 }
+
+/* WHEN NO MOVIE SEARCH IS FOUND TEXT*/
+
+.no-result-text {
+  justify-self: center;
+  align-self: center;
+  color: #787878;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  white-space: wrap;
+}
