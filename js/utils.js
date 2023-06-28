@@ -20,11 +20,7 @@ function createMovieCard(movie, imgSrc, descriptionText) {
         <p class="movie-rating">${rating}</p>
         <p class="movie-duration">${duration}</p>
         <p class="movie-genre">${genre}</p>
-        <img src="${imgSrc}" 
-        alt="add-icon-to-add-movies" 
-        class="action-icon"
-        id=${movieId} 
-        >
+        <img src="${imgSrc}" class="action-icon" id=${movieId} /> 
         <p class="description-text">${descriptionText}</p>
         <p class="movie-plot">${plot}</p>
       </div>   

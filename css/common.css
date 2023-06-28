@@ -53,18 +53,6 @@ body {
   justify-items: center;
 }
 
-/* WHEN MOVIES RENDERS */
-
-.movie-container {
-  border-bottom: 2px solid #2c2c2c;
-  color: white;
-  display: flex;
-  margin-bottom: 27px;
-  padding: 13px 0 34px;
-  position: relative;
-  width: 43em;
-}
-
 .movie-card {
   align-items: center;
   display: grid;
@@ -134,15 +122,6 @@ body {
 }
 
 /* WATCHLIST CONTAINER */
-
-.watchlist-container {
-  align-items: center;
-  display: flex;
-  gap: 7px;
-  left: 85%;
-  position: absolute;
-  top: 41%;
-}
 
 .action-icon {
   cursor: pointer;

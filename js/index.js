@@ -50,10 +50,11 @@ async function getMovieDetails(movieId) {
 }
 
 function attachAddIconEventListeners() {
-  const imgAddIcons = document.querySelectorAll(".add-icon");
-  imgAddIcons.forEach((imgAddIcon) =>
-    imgAddIcon.addEventListener("click", addToLocalStorageOnClick)
-  );
+  const imgAddIcons = document.querySelectorAll(".action-icon");
+  imgAddIcons.forEach((imgAddIcon) => {
+    console.log("eachIcon: ", imgAddIcon);
+    imgAddIcon.addEventListener("click", addToLocalStorageOnClick);
+  });
 }
 
 function addToLocalStorageOnClick(e) {
@@ -66,4 +67,5 @@ function addToLocalStorageOnClick(e) {
     ...moviesInfo.filter((movie) => movie.imdbID === e.target.id)
   );
   localStorage.setItem("wishToWatchMovies", JSON.stringify(wishToWatchMovies));
+  console.log(wishToWatchMovies);
 }

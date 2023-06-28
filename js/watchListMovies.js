@@ -29,7 +29,7 @@ function getMoviesFromLocalStorage() {
 }
 
 function attachRemoveIconEventListeners() {
-  const imgRemoveIcons = document.querySelectorAll(".remove-icon");
+  const imgRemoveIcons = document.querySelectorAll(".action-icon");
   imgRemoveIcons.forEach((imgRemoveIcon) =>
     imgRemoveIcon.addEventListener(
       "click",
@@ -40,7 +40,11 @@ function attachRemoveIconEventListeners() {
 
 function removeMovieFromLocalStorageArrayAndRender(e) {
   let storedMovies = getMoviesFromLocalStorage();
-  storedMovies = storedMovies.filter((movie) => movie.imdbID !== e.target.id);
+  console.log(storedMovies);
+  for (let i = 0; i < storedMovies.length; i++) {
+    storedMovies[i].imdbID === e.target.id && storedMovies.splice(i, 1);
+    break;
+  }
   localStorage.setItem("wishToWatchMovies", JSON.stringify(storedMovies));
   renderData();
 }
