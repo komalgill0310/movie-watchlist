@@ -41,18 +41,11 @@ async function getMovieDetails(movieId) {
   const movieResponse = await fetch(`${url}&i=${movieId}`);
   const movieData = await movieResponse.json();
   moviesInfo.push(movieData);
-  const movieCard = `
-    <div class="movie-container">
-      ${createMovieCard(movieData)}
-      <div class="watchlist-container">
-        <img src="/images/addIcon.png" 
-        alt="add-icon-to-add-movies" 
-        class="action-icon"
-        id=${movieId} 
-        >
-        <p class="description-text">Watchlist</p>
-      </div>
-    </div>`;
+  const movieCard = `${createMovieCard(
+    movieData,
+    "/images/addIcon.png",
+    "Watchlist"
+  )}`;
   return movieCard;
 }
 

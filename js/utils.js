@@ -2,8 +2,9 @@ function baseURL() {
   return "http://www.omdbapi.com/?apikey=b7cff027";
 }
 
-function createMovieCard(movie) {
+function createMovieCard(movie, imgSrc, descriptionText) {
   const {
+    imdbID: movieId,
     Poster: poster,
     Title: title,
     imdbRating: rating,
@@ -14,12 +15,18 @@ function createMovieCard(movie) {
   return `    
       <div class="movie-card">
         <img src=${poster} alt="${title}" class="movie-img">
-          <h3 class="movie-title">${title}</h3>
-          <img src="/images/filledStarIcon.png" alt="yellow color filled Star Icon" class="movie-rating-icon" />
-          <p class="movie-rating">${rating}</p>
-          <p class="movie-duration">${duration}</p>
-          <p class="movie-genre">${genre}</p>
-          <p class="movie-plot">${plot}</p>
+        <h3 class="movie-title">${title}</h3>
+        <img src="/images/filledStarIcon.png" alt="yellow color filled Star Icon" class="movie-rating-icon" />
+        <p class="movie-rating">${rating}</p>
+        <p class="movie-duration">${duration}</p>
+        <p class="movie-genre">${genre}</p>
+        <img src="${imgSrc}" 
+        alt="add-icon-to-add-movies" 
+        class="action-icon"
+        id=${movieId} 
+        >
+        <p class="description-text">${descriptionText}</p>
+        <p class="movie-plot">${plot}</p>
       </div>   
     `;
 }

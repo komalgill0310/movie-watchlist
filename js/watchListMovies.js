@@ -9,18 +9,9 @@ function renderData() {
   const moviesData = getMoviesFromLocalStorage();
   if (moviesData.length) {
     const movies = moviesData
-      .map((movie) => {
-        return `
-            <div class="movie-container">
-                ${createMovieCard(movie)}
-                <div class="watchlist-container">
-                  <img src="/images/removeIcon.png" class="action-icon remove-icon" id=${
-                    movie.imdbID
-                  }>
-                  <p class="description-text">Remove</p>
-                </div>
-            </div>`;
-      })
+      .map((movie) =>
+        createMovieCard(movie, "/images/removeIcon.png", "Remove")
+      )
       .join("");
     document.querySelector(".watch-list-movies").innerHTML = movies;
     attachRemoveIconEventListeners();
