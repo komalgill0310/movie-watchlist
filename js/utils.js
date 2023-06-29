@@ -24,7 +24,7 @@ function createMovieCard(movie, imgSrc, descriptionText) {
           <p class="movie-duration">${duration}</p>
           <p class="movie-genre">${genre}</p>
           <div class="watchlist-section">
-            <img src="${imgSrc}" class="action-icon" id=${movieId} /> 
+            <img src="${imgSrc}" class="cta-icon" id=${movieId} /> 
             <p class="description-text">${descriptionText}</p>
           </div>
         </div>

@@ -11,11 +11,20 @@ body {
   font-weight: 700;
   justify-self: center;
   line-height: 1.78125rem;
+  margin-bottom: 0;
+}
+
+.watch-list-movies div {
+  margin-top: 7px;
+}
+
+.cta-icon {
+  align-self: center;
 }
 
 .movies-search-link {
+  align-self: center;
   color: #fff;
-  font-family: Inter;
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.25rem;

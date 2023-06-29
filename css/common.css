@@ -47,17 +47,17 @@ body {
 
 .main-section {
   display: grid;
-  grid-template-rows: repeat(auto, minmax(100px, auto));
+  grid-template-rows: repeat(auto-fit, auto);
   color: #fff;
-
   background: #121212;
   justify-items: center;
 }
 
 .movie-card {
   display: grid;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
   width: 80%;
+  height: 15%;
   border-bottom: 2px solid #2c2c2c;
   margin: 25px 44px 20px 44px;
   padding-bottom: 20.59px;
@@ -84,11 +84,10 @@ body {
 
 .first-row {
   display: flex;
-  grid-row: 2;
+  grid-row: 1;
   align-items: center;
-  margin-bottom: 11px;
-  border: 1px solid orange;
   padding: 0;
+  margin-bottom: 0;
 }
 
 .movie-rating-icon {
@@ -111,12 +110,12 @@ body {
 
 .second-row {
   display: flex;
-  grid-row: 3;
+  grid-row: 2;
   align-items: center;
   justify-content: space-between;
   width: 65%;
-  margin-top: 0;
-  border: 1px dashed greenyellow;
+  margin-top: -27px;
+  margin-bottom: -13px;
 }
 
 .movie-duration,
@@ -135,8 +134,12 @@ body {
   gap: 7px;
 }
 
+.cta-icon {
+  cursor: pointer;
+}
+
 .movie-plot {
-  grid-row: 4;
+  grid-row: 3;
   color: #a5a5a5;
   font-size: 14px;
   line-height: 20px;

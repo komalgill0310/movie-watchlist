@@ -18,9 +18,12 @@ function renderData() {
   } else {
     document.querySelector(".watch-list-movies").innerHTML = `
       <p class="empty-watchlist-text">Your watchlist is looking a little empty...</p>
-      <a href="/html/index.html" class="movies-search-link"
-          >Let's add some movies to watch!
-      </a>`;
+      <div>
+        <img src="/images/addIcon.png" class="cta-icon" />
+        <a href="/html/index.html" class="movies-search-link"
+            >Let's add some movies to watch!
+        </a>
+      </div>`;
   }
 }
 
@@ -29,7 +32,7 @@ function getMoviesFromLocalStorage() {
 }
 
 function attachRemoveIconEventListeners() {
-  const imgRemoveIcons = document.querySelectorAll(".action-icon");
+  const imgRemoveIcons = document.querySelectorAll(".cta-icon");
   imgRemoveIcons.forEach((imgRemoveIcon) =>
     imgRemoveIcon.addEventListener(
       "click",

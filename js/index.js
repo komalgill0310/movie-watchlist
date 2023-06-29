@@ -50,7 +50,7 @@ async function getMovieDetails(movieId) {
 }
 
 function attachAddIconEventListeners() {
-  const imgAddIcons = document.querySelectorAll(".action-icon");
+  const imgAddIcons = document.querySelectorAll(".cta-icon");
   imgAddIcons.forEach((imgAddIcon) => {
     console.log("eachIcon: ", imgAddIcon);
     imgAddIcon.addEventListener("click", addToLocalStorageOnClick);
