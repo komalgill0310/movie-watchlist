@@ -1,0 +1,147 @@
+/* Header */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1c1c1c;
+  display: grid;
+  font-family: "Inter", sans-serif;
+  grid-template-rows: auto auto 1fr;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+  align-items: center;
+  background: url("/images/headerBackground.png"),
+    black 0px -158.291px / 100% 423.007% no-repeat;
+  color: #fff;
+  display: flex;
+  gap: 143px;
+  height: 208px;
+  justify-content: center;
+}
+
+.header-title {
+  font-size: 2.67rem;
+  font-weight: 800;
+  letter-spacing: -0.12rem;
+  line-height: 1.48rem;
+}
+
+.nav-link {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  text-decoration: none;
+}
+
+/* MAIN SECTION */
+
+.main-section {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, auto);
+  color: #fff;
+  background: #121212;
+  justify-items: center;
+}
+
+.movie-card {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  width: 80%;
+  height: 15%;
+  border-bottom: 2px solid #2c2c2c;
+  margin: 25px 44px 20px 44px;
+  padding-bottom: 20.59px;
+  align-items: start;
+}
+
+.movie-card:first-child {
+  margin-top: 42px;
+}
+
+.movie-card:last-child {
+  border-bottom: none;
+  margin-bottom: 42px;
+}
+
+.movie-img {
+  width: 150px;
+  height: 200px;
+  border-radius: 2.329px;
+  margin-right: 21px;
+  object-fit: cover;
+  grid-row: 1 / -1;
+}
+
+.first-row {
+  display: flex;
+  grid-row: 1;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.movie-rating-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin: 0 4px 0 13px;
+}
+
+.movie-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.movie-rating {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.second-row {
+  display: flex;
+  grid-row: 2;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+  margin-top: -27px;
+  margin-bottom: -13px;
+}
+
+.movie-duration,
+.movie-genre,
+.movie-rating,
+.description-text {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.watchlist-section {
+  display: inherit;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  gap: 7px;
+}
+
+.cta-icon {
+  cursor: pointer;
+}
+
+.movie-plot {
+  grid-row: 3;
+  color: #a5a5a5;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 8px;
+}
