@@ -1,7 +1,7 @@
 import { baseURL, createMovieCard } from "/js/utils.js";
 
 const inputSearch = document.getElementById("movie-title-search");
-const btnFetchMovie = document.getElementById("btn-fetch-movie");
+// const btnFetchMovie = document.getElementById("btn-fetch-movie");
 
 let moviesInfo = [];
 
