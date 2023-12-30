@@ -5,7 +5,7 @@ const btnFetchMovie = document.getElementById("btn-fetch-movie");
 
 let moviesInfo = [];
 
-btnFetchMovie.addEventListener("click", (e) => {
+document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
   fetchAndRenderMovies();
   inputSearch.value = "";
