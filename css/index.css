@@ -6,9 +6,10 @@ form {
 }
 
 .search-icon {
-  background: url("/images/searchIcon.png") no-repeat left;
+  background: url("/images/searchIcon.png") no-repeat;
+  background-position: 13px 50%;
   background-color: #343232;
-  padding: 25px;
+  padding-left:37px;
 }
 
 .input-search {
