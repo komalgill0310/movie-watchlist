@@ -24,22 +24,22 @@
       <a href="/html/watchlist.html" id="watchlist-link" class="nav-link"
         >My Watchlist</a
       >
+      
+          <form id="form">
+            <input
+              type="search"
+              name="movie-title-search"
+              placeholder="Search for a movie"
+              id="movie-title-search"
+              class="input-search search-icon"
+              autocomplete="off"
+              required
+            />
+            <button id="btn-fetch-movie" class="btn-search" type="submit">
+              Search
+            </button>
+          </form>
     </header>
-
-    <form id="form">
-      <input
-        type="search"
-        name="movie-title-search"
-        placeholder="Search for a movie"
-        id="movie-title-search"
-        class="input-search search-icon"
-        autocomplete="off"
-        required
-      />
-      <button id="btn-fetch-movie" class="btn-search" type="submit">
-        Search
-      </button>
-    </form>
 
     <main class="main-section">
       <!-- Movies will render here -->
