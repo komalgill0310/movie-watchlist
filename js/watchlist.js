@@ -17,7 +17,7 @@ function renderData() {
       <p class="empty-watchlist-text">Your watchlist is looking a little empty...</p>
       <div>
         <img src="/images/addIcon.png" class="cta-icon" />
-        <a href="/html/index.html" class="movies-search-link"
+        <a href="/index.html" class="movies-search-link"
             >Let's add some movies to watch!
         </a>
       </div>`;
@@ -40,7 +40,6 @@ function attachRemoveIconEventListeners() {
 
 function removeMovieFromLocalStorageArrayAndRender(e) {
   let storedMovies = getMoviesFromLocalStorage();
-  console.log(storedMovies);
   for (let i = 0; i < storedMovies.length; i++) {
     storedMovies[i].imdbID === e.target.id && storedMovies.splice(i, 1);
     break;

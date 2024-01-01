@@ -14,6 +14,7 @@ async function fetchAndRenderMovies() {
   const url = baseURL();
   const response = await fetch(`${url}&s=${inputSearch.value}`);
   const data = await response.json();
+  console.log("data: ", data)
   if (!data.Search) {
     return renderNoResultsMessage();
   }
@@ -31,6 +32,7 @@ async function displayMovieData(movieData) {
   for (const movie of movieData.Search) {
     movieHtml += await getMovieDetails(movie.imdbID);
   }
+  console.log("movieHtml: ", movieHtml);
   document.querySelector(".main-section").innerHTML = movieHtml;
   attachAddIconEventListeners();
 }
@@ -51,7 +53,6 @@ async function getMovieDetails(movieId) {
 function attachAddIconEventListeners() {
   const imgAddIcons = document.querySelectorAll(".cta-icon");
   imgAddIcons.forEach((imgAddIcon) => {
-    console.log("eachIcon: ", imgAddIcon);
     imgAddIcon.addEventListener("click", addToLocalStorageOnClick);
   });
 }
@@ -66,5 +67,4 @@ function addToLocalStorageOnClick(e) {
     ...moviesInfo.filter((movie) => movie.imdbID === e.target.id)
   );
   localStorage.setItem("wishToWatchMovies", JSON.stringify(wishToWatchMovies));
-  console.log(wishToWatchMovies);
 }

@@ -8,10 +8,6 @@ Welcome to **"Movie Watchlist"** – a project created to simplify the process o
 
 Live Version [here](https://colorschemegenerator03.netlify.app/)
 
-# Preview
-
-<img src = "colorSchemeGenerator.gif">
-
 ## What I've Learned
 
 This project has enriched my knowledge in web development, focusing on the following key learnings:
