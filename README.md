@@ -6,7 +6,7 @@ Welcome to **"Movie Watchlist"** – a project created to simplify the process o
 
 # Website
 
-Live Version [here](https://colorschemegenerator03.netlify.app/)
+Live Version [here](https://movieswatchlist03.netlify.app/)
 
 ## What I've Learned
 
