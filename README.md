@@ -54,7 +54,6 @@ The project is built using HTML, CSS, and JavaScript with the following structur
     - **common.css**: Defines common styling rules for the project.
     - **index.css**: Styles for the index(Search) page. 
     - **watchlist.css**: Styles for the watchlist page. 
-    - **watchListMoives.css**: Styles for individual movies in the watchlist. 
 
 - **html**: Contains HTML files.
     - **watchlist.html**: Defines the structure of the watchlist page.
@@ -63,7 +62,6 @@ The project is built using HTML, CSS, and JavaScript with the following structur
     - **index.js**: Implements the logic for the search page, including movie searching and displaying details.
     - **utils.js**: Houses utility function for the project. 
     - **watchlist.css**: Implements the logic for managing the watchlist.
-    - **watchListMovies.js**: Implements the logic for displaying individual movies in the watchlist.
 
 - **index.html**: Contains the structure of the web page. 
 
